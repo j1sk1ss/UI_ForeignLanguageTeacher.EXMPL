@@ -3,10 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:UI_ForeignLanguageTeacher.EXMPL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Вход" Height="450" Width="380">
     <Grid>
-
+        <Label HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               FontSize="20"
+               Margin="0,60,130,0"
+               FontFamily="Comic Sans MS">
+            Имя пользователя:
+        </Label>
+        <TextBox x:Name="UserName"
+                 Height="30"
+                 Width="300"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Margin="0,100,0,0"
+                 FontFamily="Comic Sans MS"
+                 FontSize="20">
+        </TextBox>
+        
+        <Label HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               FontSize="20"
+               Margin="0,160,230,0"
+               FontFamily="Comic Sans MS">
+            Пароль:
+        </Label>
+        <TextBox x:Name="Password"
+                 Height="30"
+                 Width="300"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Top"
+                 Margin="0,200,0,0"
+                 FontFamily="Comic Sans MS"
+                 FontSize="20">
+        </TextBox>
+        
+        <Button Height="30"
+                Width="200"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,100"
+                FontSize="20"
+                FontFamily="Comic Sans MS">
+            ВХОД
+        </Button>
     </Grid>
 </Window>
