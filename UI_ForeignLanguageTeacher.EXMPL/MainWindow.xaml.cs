@@ -1,28 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using UI_ForeignLanguageTeacher.EXMPL.Data;
+using UI_ForeignLanguageTeacher.EXMPL.Windows;
 
-namespace UI_ForeignLanguageTeacher.EXMPL
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+namespace UI_ForeignLanguageTeacher.EXMPL {
+    public partial class MainWindow
     {
-        public MainWindow()
-        {
+        public MainWindow() {
             InitializeComponent();
+        }
+
+        private void UserEnter(object sender, RoutedEventArgs e) {
+            try {
+                if (!new Connector().Authorize(Password.Text, UserName.Text, Admin.IsChecked!.Value)) return;
+            
+                switch (Admin.IsChecked!.Value) {
+                    case true:
+                        new Editor().Show();
+                        break;
+                    case false:
+                        new Self_Trainer().Show();
+                        break;
+                }
+                Close();
+            }
+            catch (Exception exception) {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

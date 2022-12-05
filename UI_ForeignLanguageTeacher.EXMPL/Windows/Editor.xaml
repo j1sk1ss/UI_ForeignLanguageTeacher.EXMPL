@@ -65,7 +65,7 @@
               HorizontalAlignment="Right">
             <Label HorizontalAlignment="Center"
                    VerticalAlignment="Top"
-                   Margin="0,20,170,0"
+                   Margin="0,20,150,0"
                    FontSize="20"
                    FontFamily="Comic Sans MS">
                 Список пользователей:
