@@ -1,0 +1,42 @@
+﻿<Window x:Class="UI_ForeignLanguageTeacher.EXMPL.Windows.WordsAdding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="ThemeAdding" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="Themes"
+                  Height="30"
+                  Width="120"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="20,65,0,0"
+                  FontFamily="Comic Sans MS">
+        </ComboBox>
+        <Button Height="30"
+                Width="100"
+                FontFamily="Comic Sans MS"
+                FontSize="15"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="20,100,0,0"
+                Click="AddTheme">
+            ДОБАВИТЬ
+        </Button>
+        <RichTextBox x:Name="Words"
+                     Width="600"
+                     HorizontalAlignment="Right">
+        </RichTextBox>
+        <Button Height="30"
+                Width="200"
+                FontFamily="Comic Sans MS"
+                FontSize="15"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="0,0,0,10"
+                Click="SaveWords">
+            ЗАВЕРШИТЬ
+        </Button>
+    </Grid>
+</Window>

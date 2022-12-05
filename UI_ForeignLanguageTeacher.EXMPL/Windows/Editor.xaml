@@ -17,19 +17,6 @@
                    FontFamily="Comic Sans MS">
                 Редактор заданий
             </Label>
-            <ComboBox Height="20"
-                      Width="100"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Bottom"
-                      Margin="0,0,0,30">
-            </ComboBox>
-            <Button Height="20"
-                    Width="100"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Bottom"
-                    Margin="0,0,0,5">
-                 Добавить язык
-            </Button>
             <Line X1 = "395" Y1 = "0"
                   X2 = "395" Y2 = "450"
                   Stroke="Black"></Line>
@@ -55,8 +42,24 @@
                     FontFamily="Comic Sans MS"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Margin="100,310,0,0">
+                    Margin="100,310,0,0"
+                    Click="ThemeEditor">
                 Добавить\изменить
+            </Button>
+            <ComboBox Height="20"
+                      Width="100"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Bottom"
+                      Margin="0,0,0,70"
+                      x:Name="ChoseLanguage">
+            </ComboBox>
+            <Button Height="20"
+                    Width="100"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,45"
+                    Click="AddLanguage">
+                Добавить язык
             </Button>
         </Grid>
         
@@ -81,7 +84,8 @@
                           VerticalAlignment="Bottom">
                 <Label x:Name="UsersTopText"
                        FontSize="20"
-                       FontFamily="Comic Sans MS">
+                       FontFamily="Comic Sans MS"
+                       Margin="10,0,0,0">
                 </Label>
             </ScrollViewer>
             <Line X1 = "250" Y1 = "50"

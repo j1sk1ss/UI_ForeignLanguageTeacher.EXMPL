@@ -44,7 +44,8 @@
         <CheckBox x:Name="Admin"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  Margin="190,80,0,0">
+                  Margin="190,80,0,0"
+                  FontFamily="Comic Sans MS">
             Администратор
         </CheckBox>
         
