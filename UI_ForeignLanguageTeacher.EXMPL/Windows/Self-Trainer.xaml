@@ -72,23 +72,30 @@
             <Label x:Name="Level"
                    FontFamily="Comic Sans MS"
                    FontSize="15"
-                   HorizontalAlignment="Right"
-                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
                    Margin="0,0,0,0">
                 Вопрос 0 из 10
             </Label>
+            <Label x:Name="Result"
+                   FontFamily="Comic Sans MS"
+                   FontSize="15"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Bottom"
+                   Margin="0,0,0,0">
+            </Label>
             <RichTextBox x:Name="Answer"
                          Height="200"
-                         Width="650"
+                         Width="700"
                          VerticalAlignment="Bottom"
-                         HorizontalAlignment="Left"
-                         Margin="0,0,0,0">
+                         HorizontalAlignment="Center"
+                         Margin="0,0,0,50">
             </RichTextBox>
-            <Button Height="50"
+            <Button Height="200"
                     Width="50"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Bottom"
-                    Margin="0,0,150,0"
+                    Margin="0,0,50,50"
                     Click="NextQuestion">
                  >>>
             </Button>

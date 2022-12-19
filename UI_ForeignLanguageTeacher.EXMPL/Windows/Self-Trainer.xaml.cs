@@ -19,31 +19,42 @@ namespace UI_ForeignLanguageTeacher.EXMPL.Windows {
             Quest = new Quest();
         }
         private Quest Quest { get; set; }
-        private void StartQuest(object sender, RoutedEventArgs e)
-        {
-            try
-            {
+        private void StartQuest(object sender, RoutedEventArgs e) {
+            try {
                 StartingGrid.Visibility = Visibility.Hidden;
                 TeachingGrid.Visibility = Visibility.Visible;
 
                 Quest = new Connector().GetQuest(Language.Text.Trim('\n'), Theme.Text.Trim('\n'));
-                NextQuestion(null, null);
+                
+                Question.Content = Quest.Questions[0];            
+                Level.Content    = $"Вопрос {1} из {Quest.Questions.Count}";
+                
             }
-            catch (Exception exception)
-            {
+            catch (Exception exception) {
                 MessageBox.Show($"{exception}");
             }
         }
         private int _position;
         private void NextQuestion(object sender, RoutedEventArgs e) {
-            if (_position == Quest.Questions.Count) return;
+            try {
+                if (_position <= Quest.Questions.Count - 1) _position++;
+                
+                if (_position == Quest.Questions.Count) {
+                    Result.Content = "Тест пройден!"; 
+                    var tmp = new TextRange(Answer.Document.ContentStart, Answer.Document.ContentEnd).Text;
+                    Result.Content += tmp.Contains(Quest.Answers[_position - 1]) ? "\nМолодец!" : "\nНе молодец!";
+                    return;
+                }
             
-            Level.Content = $"Вопрос {_position + 1} из {Quest.Questions.Count}";
-            
-            var text = new TextRange(Answer.Document.ContentStart, Answer.Document.ContentEnd).Text;
-
-            if (text == Quest.Answers[_position]) MessageBox.Show("1");
-            Question.Content = Quest.Questions[_position++];
+                var text = new TextRange(Answer.Document.ContentStart, Answer.Document.ContentEnd).Text;
+                Result.Content = text.Contains(Quest.Answers[_position - 1]) ? "Молодец!" : "Не молодец!";
+                Question.Content = Quest.Questions[_position];            
+                Level.Content = $"Вопрос {_position + 1} из {Quest.Questions.Count}";
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{exception}");
+            }
         }
     }
 }
