@@ -20,6 +20,20 @@ namespace UI_ForeignLanguageTeacher.EXMPL.Data {
         private const string ThemesDataBase    = "themes";
         private const string LanguagesDataBase = "languages";
 
+        public void AddUser(string name, string password, bool isAdmin) {
+            try {
+                if (NpgsqlConnection == null) Connect();
+                
+                var sqlSetCommand = $"INSERT INTO {UsersDataBase} values ('{name}', '{password}', '{isAdmin.ToString().ToLower()}')";
+                SendCommand(sqlSetCommand);
+                
+                Disconnect();
+            }
+            catch (Exception e) {
+                MessageBox.Show($"{e}");
+            }
+        }
+        
         public void AddWords(string themeName, string languageName, string quest) {
             try {
                 if (NpgsqlConnection == null) Connect();

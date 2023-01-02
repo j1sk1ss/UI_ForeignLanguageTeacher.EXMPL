@@ -4,14 +4,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         mc:Ignorable="d"
-        Title="Self_Trainer" Height="450" Width="800">
+        Title="Self_Trainer" Height="350" Width="400">
     <Grid>
         <Grid x:Name = "StartingGrid"
               Visibility="Visible">
             <Label VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="15"
-                   Margin="0,0,0,100"
+                   Margin="0,0,0,200"
                    FontFamily="Comic Sans MS"
                    x:Name="StartText">
                 Приветствую, пользователь!
@@ -28,15 +28,15 @@
                       Height="20"
                       Width="150"
                       HorizontalAlignment="Center"
-                      VerticalAlignment="Top"
-                      Margin="0,245,0,0"
+                      VerticalAlignment="Center"
+                      Margin="0,50,0,0"
                       FontFamily="Comic Sans MS">
             </ComboBox>
             
             <Label VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="15"
-                   Margin="0,150,0,0"
+                   Margin="0,110,0,0"
                    FontFamily="Comic Sans MS">
                 Выберите тему:
             </Label>
@@ -44,8 +44,8 @@
                       Height="20"
                       Width="150"
                       HorizontalAlignment="Center"
-                      VerticalAlignment="Top"
-                      Margin="0,320,0,0"
+                      VerticalAlignment="Center"
+                      Margin="0,160,0,0"
                       FontFamily="Comic Sans MS">
             </ComboBox>
             
@@ -66,8 +66,15 @@
                    FontSize="20"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   Margin="0,0,0,320">
+                   Margin="0,0,0,200">
                 Это тестовый вопрос!
+            </Label>
+            <Label FontFamily="Comic Sans MS"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0,0,0,70">
+                Введите перевод:
             </Label>
             <Label x:Name="Level"
                    FontFamily="Comic Sans MS"
@@ -81,21 +88,17 @@
                    FontFamily="Comic Sans MS"
                    FontSize="15"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Bottom"
-                   Margin="0,0,0,0">
+                   VerticalAlignment="Bottom">
             </Label>
-            <RichTextBox x:Name="Answer"
-                         Height="200"
-                         Width="700"
-                         VerticalAlignment="Bottom"
-                         HorizontalAlignment="Center"
-                         Margin="0,0,0,50">
-            </RichTextBox>
-            <Button Height="200"
+            <TextBox x:Name="Answer"
+                    Height="30"
+                    Width="220">
+            </TextBox>
+            <Button Height="30"
                     Width="50"
-                    HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom"
-                    Margin="0,0,50,50"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="230,0,0,0"
                     Click="NextQuestion">
                  >>>
             </Button>
